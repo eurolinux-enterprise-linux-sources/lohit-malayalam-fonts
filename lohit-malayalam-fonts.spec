@@ -3,7 +3,7 @@
 
 Name:           %{fontname}-fonts
 Version:        2.4.4
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Free Malayalam font
 
 Group:          User Interface/X
@@ -16,6 +16,7 @@ BuildRequires: fontforge >= 20080429
 BuildRequires:  fontpackages-devel
 Requires:       fontpackages-filesystem
 Patch1: bug-549319-578036.patch
+Patch2: bug-691290.patch
 Obsoletes: lohit-fonts-common < %{version}-%{release}
 
 %description
@@ -25,6 +26,7 @@ This package provides a free Malayalam truetype/opentype font.
 %prep
 %setup -q -n %{fontname}-%{version} 
 %patch1 -p1 -b .1-fix-font-conf
+%patch2 -p1 -b .2-added-rupee-sign
 
 %build
 make
@@ -52,6 +54,9 @@ rm -fr %{buildroot}
 %doc ChangeLog COPYRIGHT COPYING AUTHORS README ChangeLog.old
 
 %changelog
+* Tue Jul 05 2011 Pravin Satpute <psatpute@redhat.com> - 2.4.4-5
+- Resolves: bug 691290
+
 * Tue May 04 2010 Pravin Satpute <psatpute@redhat.com> - 2.4.4-4
 - Resolves: bug 586862
 
