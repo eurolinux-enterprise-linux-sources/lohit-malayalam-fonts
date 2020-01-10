@@ -3,7 +3,7 @@
 
 Name:           %{fontname}-fonts
 Version:        2.5.3
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        Free Malayalam font
 Group:          User Interface/X
 License:        OFL
@@ -44,9 +44,6 @@ ln -s %{_fontconfig_templatedir}/%{fontconf} \
 %doc ChangeLog COPYRIGHT OFL.txt AUTHORS README ChangeLog.old
 
 %changelog
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 2.5.3-2
-- Mass rebuild 2013-12-27
-
 * Thu Jan 31 2013 Pravin Satpute <psatpute@redhat.com> - 2.5.3-1
 - Upstream release 2.5.3
 
